@@ -42,6 +42,7 @@ def update_task(id):
     for t in tasks:
         if t.id == id:
             task = t
+            break
             
     if task == None:
         return jsonify({"message": "Não foi possível encontrar a atividade"}), 404
@@ -51,7 +52,20 @@ def update_task(id):
     task.description = data['description']
     task.completed = data['completed']
     return jsonify({'message': "Tarefa atualizada com sucesso"})
-    
+
+@app.route('/tasks/<int:id>', methods=['DELETE'])
+def delete_task(id):
+    task = None
+    for t in tasks:
+        if t.id == id:
+            task = t
+            break
+
+    if not task:
+        return jsonify({"messabe": "Não foi possível encontrar a atividade"}), 404
+
+    tasks.remove(task)
+    return jsonify({"message": "Tarefa deletada com sucesso"})
 
 # Esse trecho é utilizado em ambiente de desenvolvimento NUNCA EM PRODUÇÃO
 if __name__ == "__main__":
