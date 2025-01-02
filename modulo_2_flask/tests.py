@@ -39,3 +39,33 @@ def test_get_task():
         assert response.status_code == 200
         response_json = response.json()
         assert task_id == response_json['id']
+
+# O PAYLOAD será a informação que deve ser atualizado na tarefa
+def test_update_task():
+    task_id = tasks[0]
+    payload = {
+        "title": "Nova tarefa atualizada",
+        "description": "Nova descrição",
+        "completed": True
+    }
+    response = requests.put(f"{BASE_URL}/tasks/{task_id}", json=payload)
+    response.status_code == 200
+    response_json = response.json()
+    assert "message" in response_json
+
+    # Nova requisição de uma tarefa especifica
+    response = requests.get(f"{BASE_URL}/tasks/{task_id}")
+    assert response.status_code == 200
+    response_json = response.json()
+    assert response_json["title"] == payload["title"]
+    assert response_json["description"] == payload["description"]
+    assert response_json["completed"] == payload["completed"]
+
+def test_delete_task():
+        if tasks: 
+            task_id = tasks[0]
+            response = requests.delete(f"{BASE_URL}/tasks/{task_id}")
+            assert response.status_code == 200
+
+            response = requests.get(f"{BASE_URL}/tasks/{task_id}")
+            assert response.status_code == 404
