@@ -9,10 +9,15 @@ app.config['SECRET_KEY'] = "your_secret_key"
 # Trecho de código sugerido pelo Chatgpt onde na variável BASE_DIR é informado o caminho absoluto
 # e na variável INSTANCE_DIR receberia o caminho completo da base de dados 
 
-import os
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-INSTANCE_DIR = os.path.join(BASE_DIR, 'instance')
-app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(INSTANCE_DIR, 'database.db')}"
+#import os
+#BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+#INSTANCE_DIR = os.path.join(BASE_DIR, 'instance')
+
+#app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(INSTANCE_DIR, 'database.db')}"
+# A linha acima é o ORM para uma conexão de banco de dados sqlite onde precisei parar as informações 
+# das variaveis, já a linha de baixo é a mesma conexão ajustada para ser realizada no mysql este já sem a necessidade 
+# das variaveis de localização da base
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:root@127.0.0.1:3306/flask_crud_api_autenticacao"
 
 
 # Trecho do código sugerido pelo professor na aula porém causa um problema onde database.db é chamado na raiz do projeto 
@@ -21,8 +26,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(INSTANCE_DIR, 
 
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 
-print(f"Database path: {os.path.join(BASE_DIR, 'database.db')}")
-print(f"Database path: {os.path.join(INSTANCE_DIR, 'database.db')}")
+#print(f"Database path: {os.path.join(BASE_DIR, 'database.db')}")
+#print(f"Database path: {os.path.join(INSTANCE_DIR, 'database.db')}")
 
 
 login_manager = LoginManager()
