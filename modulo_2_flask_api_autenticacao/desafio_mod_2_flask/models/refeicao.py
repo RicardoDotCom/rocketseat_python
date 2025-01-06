@@ -5,8 +5,8 @@ class Refeicao(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     refeicao = db.Column(db.String(80), nullable=False)
     descricao = db.Column(db.String(200), nullable=False)
-    data_refeicao = db.Column(db.DateTime(), nullable=False)
-    esta_na_dieta = db.Column(db.Boolean(), nullable=False, default=False)
+    data_refeicao = db.Column(db.DateTime, nullable=False)
+    esta_na_dieta = db.Column(db.Boolean, nullable=False, default=False)
 
     def to_dict(self):
         return {
