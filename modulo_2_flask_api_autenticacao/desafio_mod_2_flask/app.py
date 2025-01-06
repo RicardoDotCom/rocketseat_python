@@ -24,6 +24,29 @@ def incluir_refeicao():
 
     return jsonify({"message": "Dados inválidos"}), 400
 
+@app.route('/refeicao', methods=['GET'])
+def listar_refeicoes():
+    refeicoes = Refeicao.query.all()
+
+    if refeicoes:
+        refeicoes_list = [refeicao.to_dict() for refeicao in refeicoes]
+        return jsonify(refeicoes_list)
+    
+    return jsonify({"message": "Não há refeições cadastradas"}), 404
+
+@app.route('/refeicao/<int:id_refeicao>', methods=['GET'])
+def listar_refeicao(id_refeicao):
+    refeicao = Refeicao.query.get(id_refeicao)
+
+    if refeicao:
+        return {           
+        "refeicao": refeicao.refeicao,
+        "descricao": refeicao.descricao,
+        "data_refeicao": refeicao.data_refeicao,
+        "esta_na_dieta": refeicao.esta_na_dieta
+        }
+    
+    return jsonify({"message": "Refeição não encontrada"}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
