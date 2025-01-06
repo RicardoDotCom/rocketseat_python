@@ -48,5 +48,21 @@ def listar_refeicao(id_refeicao):
     
     return jsonify({"message": "Refeição não encontrada"}), 404
 
+@app.route('/refeicao/<int:id_refeicao>', methods=['PUT'])
+def atualiza_refeicao(id_refeicao):
+    data = request.json
+    refeicao = Refeicao.query.get(id_refeicao)
+
+    if refeicao:
+        refeicao.refeicao = data.get("refeicao")
+        refeicao.descricao = data.get("descricao")
+        refeicao.data_refeicao = data.get("data_refeicao")
+        refeicao.esta_na_dieta = data.get("esta_na_dieta")
+        db.session.commit()
+
+        return jsonify({"message": f"Refeição {id_refeicao} atualizada com sucesso"})
+    
+    return jsonify({"message": "Refeição não encontrada"}), 404
+
 if __name__ == '__main__':
     app.run(debug=True)
