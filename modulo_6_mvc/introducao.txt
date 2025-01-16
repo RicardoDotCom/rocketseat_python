@@ -21,7 +21,31 @@ O Controller armazena a regra de negócio do sistema
 
 Model
 
-O Model é responsável por armazenar e gerenciar os dados do aplicativo, bem como fornecer métodos para acessar e manipular esses dados.
+O Model é responsável por armazenar e gerenciar os dados do aplicativo, bem como fornecer métodos para acessar e 
+manipular esses dados.
 
 Ambientes Virtuais
 
+Utilizaremos o VIRTUALENV do python pois ele nos possibilita que criemos um ambiente virtual para os projetos
+facilitando assim que as bibliotecas que forem instadas não entrem em conflito com outras instaladas na maquina, 
+para consulta acesse: 
+
+https://docs.python.org/pt-br/3.13/library/venv.html
+https://pypi.org/project/virtualenv/
+
+Pylint
+
+O Pylint é utilizado para monitorar a codificação sugerindo boas práticas para o projeto e criando convenções
+para que qdo atuando em equipe todos os programadores sigam as mesmas convenções
+
+https://pypi.org/project/pylint/
+
+Para configurar o pylint iremos realizar o segunite comando no terminal dentro da pasta do projeto
+
+pylint --generate-rcfile > .pylintrc 
+
+no windows pode acontecer de ter alguns problemas devido ao UTF-8  para isso execute o comando
+
+pylintrc --generate-rcfile | out-file -encoding utf8 .pylintrc
+
+ele cria um arquivo de config no projeto
