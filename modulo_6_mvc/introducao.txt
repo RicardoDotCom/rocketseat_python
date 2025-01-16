@@ -1,0 +1,27 @@
+Quando foi feito?
+
+O padrão MVC foi introduzido por Trygve Reenskaug, um engenheiro de software norueguês, em 1978.
+Ele apresentou o padrão em um artigo chamado "Aplications Programming in Smaltalk-80: How to use Model-View_Controller".
+
+O que é?
+
+É uma arquitetura de software amplamente utilizada para organizar e estruturar o códiogo em sistemas que envolvem interface de usuário
+e lógica de negócios. Ele sepra as responsabilidades em três componentes principais: Model(Modelo), View(Visão) e Controller(Controlador).
+
+Responsabilidades do Padrão MVC
+
+Views
+
+A view é responsável por apresentar os dados de resposta e por lidar com a interface de interação com o usuário.
+
+Controllers
+
+O controller recebe as entradas de usuário da View, processa essa entrada e atualiza o Model conforme necessário. 
+O Controller armazena a regra de negócio do sistema
+
+Model
+
+O Model é responsável por armazenar e gerenciar os dados do aplicativo, bem como fornecer métodos para acessar e manipular esses dados.
+
+Ambientes Virtuais
+
