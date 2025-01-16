@@ -49,3 +49,12 @@ no windows pode acontecer de ter alguns problemas devido ao UTF-8  para isso exe
 pylintrc --generate-rcfile | out-file -encoding utf8 .pylintrc
 
 ele cria um arquivo de config no projeto
+
+Pre-Commit
+
+É uma lib que executa uma ação antes que o commit seja realizado mas para que ela funcione corretamente é necessário
+que o git tenha sido iniciado na pasta do projeto
+
+acesse: 
+https://pre-commit.com/
+
