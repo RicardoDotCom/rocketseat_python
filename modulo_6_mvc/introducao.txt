@@ -52,9 +52,22 @@ ele cria um arquivo de config no projeto
 
 Pre-Commit
 
-É uma lib que executa uma ação antes que o commit seja realizado mas para que ela funcione corretamente é necessário
+É uma lib que executa uma ação antes que o commit seja realizado, mas para que ela funcione corretamente é necessário
 que o git tenha sido iniciado na pasta do projeto
 
 acesse: 
 https://pre-commit.com/
 
+Neste projeto ele será vinculado ao pylint para que antes de "commitar" as alterações será excutado o pylint para 
+validar se o que foi desenvolvido está dentro das convenções do projeto
+
+
+Projeto que será desenvolvido
+
+API para adoção de PETs! (BACKEND)
+
+Funcionalidades:
+    Registrar uma pessoa adotando um PET
+    Listar todos os PETs
+    Deletar um PET
+    Retornar informações de uma pessoa com o seu PET
