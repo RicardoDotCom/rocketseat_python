@@ -12,3 +12,4 @@ class PeopleTable(Base):
 
     def __repr__(self):
         return f"People [name={self._first_name}, last_name={self.last_name}, pet_id={self.pet_id}]"
+    
