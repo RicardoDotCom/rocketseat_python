@@ -1,4 +1,3 @@
-from typing import Dict
 from abc import ABC, abstractmethod
 
 class PetDeleterControllerInterface(ABC):
