@@ -4,6 +4,6 @@ from abc import ABC, abstractmethod
 class PetListerControllerInterface(ABC):
 
     @abstractmethod
-    def list(self) -> Dict:
+    def list_pets(self) -> Dict:
         pass
         

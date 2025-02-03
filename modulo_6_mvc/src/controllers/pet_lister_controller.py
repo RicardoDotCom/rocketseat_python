@@ -7,13 +7,13 @@ class PetListerController(PetListerControllerInterface):
     def __init__(self, pet_repository: PetsRepositoryInterface) -> None:
         self.__pet_repository = pet_repository
 
-    def list(self) -> Dict:
+    def list_pets(self) -> Dict:
         pets = self.__get_pets_in_db()
         response = self.__format_response(pets)
         return response
     
     def __get_pets_in_db(self) -> List[PetsTable]:
-        pets = self.__pet_repository.list()
+        pets = self.__pet_repository.list_pets()
         return pets
     
     def __format_response(self, pets: List[PetsTable]) -> Dict:
@@ -24,7 +24,7 @@ class PetListerController(PetListerControllerInterface):
         return {
             "data": {
                 "type": "Pets",
-                "account": len(formatted_pets),
+                "count": len(formatted_pets),
                 "attributes": formatted_pets
             }
         }   
