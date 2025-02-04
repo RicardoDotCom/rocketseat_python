@@ -2,7 +2,7 @@ from src.models.sqlite.entities.pets import PetsTable
 from .pet_lister_controller import PetListerController
 
 class MockPetsRepository:
-    def list(self):
+    def list_pets(self):
         return [
             PetsTable(name="Fluffy", type="cat", id=4),
             PetsTable(name="Buddy", type="dog", id=47),
@@ -10,12 +10,12 @@ class MockPetsRepository:
     
 def test_list_pets():
     controller = PetListerController(MockPetsRepository())
-    response = controller.list()
+    response = controller.list_pets()
 
     expected_response = {
         "data": {
             "type": "Pets",
-            "account": 2,
+            "count": 2,
             "attributes": [
                 { "name": "Fluffy", "type": "cat", "id": 4 },
                 { "name": "Buddy", "type": "dog", "id": 47 }
