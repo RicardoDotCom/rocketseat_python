@@ -1,3 +1,9 @@
 **/__pycache__
 .pytest_cache
 venv
+# .env  
+
+# é importante não commitar o arquivo .env pois nele contém todas as 
+# informarções de variáveis de ambiente e isso são dados sensíveis pois 
+# contém as chaves de encriptação das senhas, também os acessos ao bco de dados
+# mas por motivos acadêmicos eu escolhi enviar esse arquivo para o github
