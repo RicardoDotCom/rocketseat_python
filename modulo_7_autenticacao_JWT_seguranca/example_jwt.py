@@ -8,7 +8,8 @@ app = Flask(__name__)
 def login():
     token = jwt.encode(
         payload={
-            'exp': datetime.now(timezone.utc) + timedelta(minutes=1)
+            'exp': datetime.now(timezone.utc) + timedelta(minutes=1),
+            'email': "ricardo@email.com"
         },
         key="minhaChave",
         algorithm="HS256"
