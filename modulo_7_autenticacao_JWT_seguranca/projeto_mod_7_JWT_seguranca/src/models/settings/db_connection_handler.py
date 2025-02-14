@@ -1,9 +1,10 @@
 import sqlite3
+import os
 from sqlite3 import Connection
 
 class __DbConnectionHandler:
     def __init__(self) -> None:
-        self.__connection_string = "storage.db"
+        self.__connection_string = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "storage.db"))
         self.__conn = None
 
     def connect(self) -> None:

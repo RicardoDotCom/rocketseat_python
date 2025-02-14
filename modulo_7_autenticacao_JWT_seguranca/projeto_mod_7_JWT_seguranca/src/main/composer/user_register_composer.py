@@ -3,7 +3,7 @@ from src.models.repositories.user_repository import UserRepository
 from src.controllers.user_register import UserRegister
 from src.views.user_register_view import UsereRegisterView
 
-def login_creator_composer():
+def user_register_composer():
     conn = db_connection_handler.get_connection()
     model = UserRepository(conn)
     controller = UserRegister(model)
