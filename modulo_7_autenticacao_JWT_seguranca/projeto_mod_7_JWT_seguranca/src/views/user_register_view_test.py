@@ -1,6 +1,6 @@
 import pytest
 from src.views.http_types.http_request import HttpRequest
-from src.views.http_types.http_resonse import HttpResponse
+from src.views.http_types.http_response import HttpResponse
 from .user_register_view import UsereRegisterView
 
 class MockController: 
