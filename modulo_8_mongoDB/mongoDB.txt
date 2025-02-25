@@ -1,0 +1,22 @@
+MongoDB
+
+O que é NoSQL?
+
+Banco de dados NoSQL(Not Only SQL) são sistemas de gerenciamento de banco de dados que não usam o modelo relacional tradicional baseado em tabelas.
+Em vez disso, eles utilizam diferentes modelos de dados para armazenar e gerenciar dados.
+
+Tipos de NoSQL:
+Documents Stores: Armazenam dados em documentos, geralmente no formato JSON -> MongoDB
+Key-Value Stores: Armazenam dados como pares chaves-valor -> Redis, DynamoDB
+Wide-Column Stores: Armazenam dados em tabelas com linhas e colunas. As colunnas podem variar de linha para linha -> Cassandra
+Graph Databases: Armazenam dados na forma de grafos -> Neo4j
+
+SQL x NoSQL:
+SQL:										NoSQL:
+* Modelo de Dados Estruturados 				* Modelo de Dados Flexível
+* Esquema Rígido							* Desempenho -> Alta velocidade
+* Desempenho -> Consultas Complexas
+
+MongoDB
+Banco de dados NoSQL orientado a documentos, que armazena dados em um formato flexível e sem esquema rígido, geralmente utilizando JSON
+
