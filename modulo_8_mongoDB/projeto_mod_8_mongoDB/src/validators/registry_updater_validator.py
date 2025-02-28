@@ -8,7 +8,7 @@ def registry_updater_validator(body: any):
             "schema": {
                 "name": { "type": "string" },
                 "address": { "type": "string" },
-                "cupom": { "type": "boolean" },
+                "cupom": { "type": "boolean" }
             }
         }
     })

@@ -12,7 +12,7 @@ class RegistryFinder:
         try:
             order_id = http_request.path_params["order_id"]
             order = self.__seach_order(order_id)
-            self.__format_response(order)
+            return self.__format_response(order)
         except Exception as exception:
             return error_handler(exception)
 
@@ -22,6 +22,7 @@ class RegistryFinder:
         return order
     
     def __format_response(self, order: dict) -> HttpResponse:
+        order["_id"] = str(order["_id"])
         return HttpResponse(
             body={
                 "data": {
