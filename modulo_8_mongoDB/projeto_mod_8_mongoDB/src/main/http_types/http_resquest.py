@@ -2,8 +2,10 @@ class HttpResquest:
     def __init__(
             self, body: dict = None, 
             header: dict = None,
-            params: dict = None
+            path_params: dict = None,
+            query: dict = None
             ) -> None:
         self.body = body
         self.headers = header
-        self.params = params
+        self.path_params = path_params
+        self.query = query
