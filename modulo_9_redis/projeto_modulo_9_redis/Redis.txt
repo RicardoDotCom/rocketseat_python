@@ -1,0 +1,18 @@
+O que é Redis?
+
+O Redis (Remote Dictionary Server) é um banco de dados NoSQL em mémoria!
+Amplamento utilizado em ambientes de desenvolvimento de software por suas características especificas que o tornam uma excelente escolha para cenários de alta performance e baixa latência
+
+Armazenamento em Mémoria!
+O Redis é um banco em memória!
+Ele mantem todos os seus dados na RAM. O que proporciona tempos de resposta extremamente rápidos
+
+Demais características
+O Redis é extremamente rápido, capaz de realizar milhões de operações por segundo em hardware comum
+O Redis armazena seus dados em modelo chave-valor
+O Redis é amplamente utlizado como cache devido à sua baixa latência, sendo uma escolha comum para caching de sessões, resultados de queries e outras operações
+
+Uso em Cache?
+O uso em cache refere-se a uma técnica de armazenamento temporário de dados em uma área de acesso rápio (como a mémoria RAM) para melhorar o desempenho de sistemas e aplicações.
+O objetivo do cache é armazenar informações frequentemente acessadas ou que exigem processaento intensivo, de forma que futuras solicitações desses dados sejam atendidas de maneira mais rápida.
+
