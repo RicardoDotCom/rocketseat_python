@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class ProductsRepositoryInterfaces(ABC):
+class ProductsRepositoryInterface(ABC):
 
     @abstractmethod
     def find_product_by_name(self, product_name: str) -> tuple: pass

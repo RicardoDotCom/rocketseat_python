@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class RedisRepositoryInterfaces(ABC):
+class RedisRepositoryInterface(ABC):
 
     @abstractmethod
     def insert(self, key: str, value: any) -> None: pass

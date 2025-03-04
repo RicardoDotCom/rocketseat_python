@@ -1,10 +1,10 @@
-from src.models.sqlite.repository.interfaces.product_repository import ProductsRepositoryInterfaces
-from src.models.redis.repository.interfaces.redis_repository import RedisRepositoryInterfaces
+from src.models.sqlite.repository.interfaces.product_repository import ProductsRepositoryInterface
+from src.models.redis.repository.interfaces.redis_repository import RedisRepositoryInterface
 from src.http_types.http_request import HttpRequest
 from src.http_types.http_response import HttpResponse
 
 class ProductFinder:
-    def __init__(self, redis_repo: RedisRepositoryInterfaces, product_repo: ProductsRepositoryInterfaces) -> None:
+    def __init__(self, redis_repo: RedisRepositoryInterface, product_repo: ProductsRepositoryInterface) -> None:
         self.__redis_repo = redis_repo
         self.__product_repo = product_repo
 
@@ -22,6 +22,7 @@ class ProductFinder:
     def __find_in_cache(self, product_name: str) -> tuple:
         product_infos = self.__redis_repo.get_key(product_name)
         if product_infos:
+            print("Achei o produto no Redis")
             product_infos_list = product_infos.split(",") # price,quantity -> [price, quantity]
             return (0, product_name, product_infos_list[0], product_infos_list[1])
         
