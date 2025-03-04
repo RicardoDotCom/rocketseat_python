@@ -2,5 +2,5 @@ CREATE TABLE IFNOT EXISTS 'products' (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     price FLOAT NOT NULL,
-    quatity INTEGER NOT NULL
+    quantity INTEGER NOT NULL
 );
