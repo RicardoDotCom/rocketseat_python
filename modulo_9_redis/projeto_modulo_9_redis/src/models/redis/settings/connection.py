@@ -6,7 +6,7 @@ class RedisConnectionHandle:
 
     def connect(self) -> Redis:
         redis_conn = Redis(
-            ost="localhost", 
+            host="localhost", 
             port=6379, 
             db=0
         )
