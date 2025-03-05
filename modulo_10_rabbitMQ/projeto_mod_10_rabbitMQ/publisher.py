@@ -34,5 +34,8 @@ class RabbitMQPublisher:
         )
     
 rabbit_mq_publisher = RabbitMQPublisher()
-rabbit_mq_publisher.send_message({"msg": "Outra mensagem de teste"})
+rabbit_mq_publisher.send_message({"msg": "FINALIZAMOS A FORMAÇÃO PYTHON MANOOOOOO"})
     
+
+## Como conseguir o id do grupo do telegram, com o token do bot acesse a url abaixo em um navegador
+# https://api.telegram.org/bot<SEU_TOKEN>/getUpdates
