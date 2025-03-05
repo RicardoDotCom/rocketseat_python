@@ -1,0 +1,66 @@
+O que é RabbitMQ?
+RabbitMQ é um sistema de mansageria (message broker) de código aberto, amplamente utilizado para enviar,
+receber e rotear mensagens entre diferentes serviços ou aplicações.
+
+Mas isso não parace HTTP?
+Tem duas diferenças principais
+
+1º Modo de Comunição:
+HTTP chama apenas um outro serviço de forma direta, já o RabbitMQ recebe uma requisição do serviço 
+e ele funciona como um intermediador pois ele pode chamar um ou mais serviços dependendo da sua configuração
+
+2º Assincronismo
+diferente do HTTP que é síncrono o RabbitMQ é assíncrono
+
+Tecnologias similares ao RabbitMQ
+Apache Kafka, Amazon SQS(Simple Queue Service) e ActiveMQ
+
+Comparativo:
+
+AMQP(RabbitMQ)
+
+Finalidade:
+É um protocolo de mensageria usado para comunicação assíncrona entre sistemas distrbuídos.
+
+Modo operacional:
+Seu principal objetivo é garantir o envio confíavel de mensagensentre produtores e consumidores 
+mesmo que esses componentes não estejam disponíveis ao mesmo tempo.
+
+Cenário:
+É ideal para cenários onde a comunicação precisa ser resiliente e tolerante a falhas, como em filas de mensagens
+Assincronismo. 
+
+HTTP (Flask, FastAPI, Django)
+
+Finalidade:
+É um protocolo de comunicação síncrono voltado para a transferênia de informações entre clientes e servidores na web
+
+Modo operacional:
+Usado principlamente para fazer requisições e receber repostas (ex.: APIs RESTfull), send adequado para transações rápidas e com retorno imediato.
+
+Cenário:
+É ideal para interações que requerem navegação web ou chaadas de API.
+Sincronismo
+
+** Publisher 
+Produtor/Publicador
+Responsável por enviar mensagem(script Python)
+
+**Exchange (RabbitMQ)
+Gerencia a Mensagem do Publisher para suas filas 
+
+**Fila (RabbitMQ)
+Recebe a mensagem e gerencia sua entrega para o Consumer
+
+**Consumer 
+Consumidor/Receptor 
+Responsável por conumir(receber) a mensagem do Publisher(script Python) 
+
+DESENHO
+Publisher --> Exchange --> Fila --> Consumer
+
+
+Routing Key
+é um direcionador das mensagens da Exchange e essa mensagem seria consumida pela queue que foi direcionada informando a Routing Key
+*quando forem do tipo DIRECT
+
